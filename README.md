@@ -2,6 +2,8 @@ Mongounit is a PHPUnit extension for test cases that utilize MongoDB as their da
 
 __Current Version__: v1.0
 
+[![Build Status](https://secure.travis-ci.org/zumba/mongounit.png)](http://travis-ci.org/zumba/mongounit)
+
 ## Requirements
 
 PHP 5.3+
