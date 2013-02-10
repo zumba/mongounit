@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit backupGlobals="false"
+		 backupStaticAttributes="false"
+		 bootstrap="./PHPUnit/Extensions/Mongo/AutoLoader.php"
+		 convertErrorsToExceptions="true"
+		 convertNoticesToExceptions="true"
+		 convertWarningsToExceptions="true"
+		 processIsolation="false"
+		 stopOnFailure="false"
+		 syntaxCheck="true"
+		 strict="true"
+		 colors="true">
+	<testsuites>
+		<testsuite name="Core Test Suite">
+			<directory suffix="Test.php">./Tests</directory>
+		</testsuite>
+		<testsuite name="Sample Test">
+			<directory suffix="Test.php">./Samples</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<blacklist>
+			<file>./PHPUnit/Extensions\Mongo\AutoLoader.php</file>
+			<directory>./Tests</directory>
+		</blacklist>
+		<whitelist addUncoveredFilesFromWhitelist="true">
+			<directory>./PHPUnit</directory>
+			<exclude>
+				<file>./PHPUnit/Extensions\Mongo\AutoLoader.php</file>
+			</exclude>
+		</whitelist>
+	</filter>
+</phpunit>
