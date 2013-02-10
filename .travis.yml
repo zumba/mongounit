@@ -7,6 +7,6 @@ services:
   - mongodb
 
 before_script:
-  - pecl -q install mongo && echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+   - ./bin/mongo-php-driver-installer.sh
 
 script: phpunit --coverage-text
