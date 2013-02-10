@@ -7,6 +7,9 @@ services:
   - mongodb
 
 before_script:
-   - ./bin/mongo-php-driver-installer.sh
+   - ./bin/mongo-php-driver-install.sh
 
 script: phpunit --coverage-text
+
+notifications:
+  email: false
