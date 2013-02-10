@@ -4,6 +4,8 @@ class PizzaTest extends \PHPUnit\Extensions\Mongo\TestCase {
 
 	protected $connection;
 
+	protected $dataset;
+
 	public function setUp() {
 		$this->fixture = array(
 			'orders' => array(
@@ -23,9 +25,11 @@ class PizzaTest extends \PHPUnit\Extensions\Mongo\TestCase {
 	}
 
 	public function getDataSet() {
-		$dataset = new PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getConnection());
-		$dataset->setFixture($this->fixture);
-		return $dataset;
+		if (empty($this->dataSet)) {
+			$this->dataSet = new PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getConnection());
+			$this->dataSet->setFixture($this->fixture);
+		}
+		return $this->dataSet;
 	}
 
 	public function testSizes() {
