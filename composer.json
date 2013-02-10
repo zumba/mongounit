@@ -32,6 +32,6 @@
         "bin-dir": "bin"
     },
     "autoload": {
-        "files": ["PHPUnit\Extensions\Mongo\AutoLoader.php"]
+        "files": ["PHPUnit/Extensions/Mongo/AutoLoader.php"]
     }
 }
