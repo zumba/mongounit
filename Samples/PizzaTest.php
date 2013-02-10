@@ -2,6 +2,8 @@
 
 class PizzaTest extends \PHPUnit\Extensions\Mongo\TestCase {
 
+	const DEFAULT_DATABASE = 'mongounit_test';
+
 	protected $connection;
 
 	protected $dataset;
@@ -19,7 +21,7 @@ class PizzaTest extends \PHPUnit\Extensions\Mongo\TestCase {
 	public function getConnection() {
 		if (empty($this->connection)) {
 			$this->connection = new \PHPUnit\Extensions\Mongo\Client\Connector(new \MongoClient());
-			$this->connection->setDb('test');
+			$this->connection->setDb(static::DEFAULT_DATABASE);
 		}
 		return $this->connection;
 	}
@@ -32,7 +34,7 @@ class PizzaTest extends \PHPUnit\Extensions\Mongo\TestCase {
 		return $this->dataSet;
 	}
 
-	public function testSizes() {
+	public function testSizesFromFixture() {
 		$this->assertCount(2, $this->getConnection()->collection('orders')->find());
 		$this->assertCount(1, $this->getConnection()->collection('orders')->find(array(
 			'size' => 'medium'

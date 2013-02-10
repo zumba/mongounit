@@ -6,11 +6,6 @@ use PHPUnit\Extensions\Mongo\DataSet\DataSet;
 abstract class TestCase extends \PHPUnit_Framework_TestCase {
 
 	/**
-	 * @var PHPUnit\Extensions\Mongo\DataSet\DataSet
-	 */
-	protected $dataSet;
-
-	/**
 	 * Setup the mongo db with fixture data.
 	 *
 	 * @return void
@@ -20,9 +15,6 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase {
 		if (!class_exists('MongoClient')) {
 			$this->markTestSkipped('The Mongo extension is not available.');
 			return;
-		}
-		if (empty($this->dataSet)) {
-			$this->dataSet = new DataSet($this->getConnection());
 		}
 		$this->getDataSet()
 			->dropAllCollections()
