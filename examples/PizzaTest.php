@@ -1,6 +1,6 @@
 <?php
 
-class PizzaTest extends \PHPUnit\Extensions\Mongo\TestCase {
+class PizzaTest extends \Zumba\PHPUnit\Extensions\Mongo\TestCase {
 
 	const DEFAULT_DATABASE = 'mongounit_test';
 
@@ -20,7 +20,7 @@ class PizzaTest extends \PHPUnit\Extensions\Mongo\TestCase {
 
 	public function getConnection() {
 		if (empty($this->connection)) {
-			$this->connection = new \PHPUnit\Extensions\Mongo\Client\Connector(new \MongoClient());
+			$this->connection = new \Zumba\PHPUnit\Extensions\Mongo\Client\Connector(new \MongoClient());
 			$this->connection->setDb(static::DEFAULT_DATABASE);
 		}
 		return $this->connection;
@@ -28,7 +28,7 @@ class PizzaTest extends \PHPUnit\Extensions\Mongo\TestCase {
 
 	public function getDataSet() {
 		if (empty($this->dataSet)) {
-			$this->dataSet = new PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getConnection());
+			$this->dataSet = new \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getConnection());
 			$this->dataSet->setFixture($this->fixture);
 		}
 		return $this->dataSet;

@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPUnit\Extensions\Mongo\Base;
+namespace Zumba\PHPUnit\Extensions\Mongo\Base;
 
 interface Connector {
 

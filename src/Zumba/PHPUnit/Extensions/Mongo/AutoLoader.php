@@ -1,10 +1,10 @@
 <?php
 
-namespace PHPUnit\Extensions\Mongo;
+namespace Zumba\PHPUnit\Extensions\Mongo;
 
 spl_autoload_register(function($classname) {
 	$namespaces = array(
-		'PHPUnit' => array(dirname(dirname(dirname(__DIR__))) . '/')
+		'Zumba' => array(dirname(dirname(dirname(dirname(__DIR__)))) . '/')
 	);
 	$classname = ltrim($classname, '\\');
 	foreach ($namespaces as $ns => $paths) {

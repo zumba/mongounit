@@ -1,13 +1,13 @@
 <?php
 
-use PHPUnit\Extensions\Mongo\Client\Connector;
+use Zumba\PHPUnit\Extensions\Mongo\Client\Connector;
 
 class ConnectorTest extends \PHPUnit_Framework_TestCase {
 
 	public function testGeneralConnection() {
 		$connection = new Connector(new \MongoClient());
 		$connection->setDb('test');
-		$this->assertInstanceOf('PHPUnit\Extensions\Mongo\Client\Connector', $connection);
+		$this->assertInstanceOf('Zumba\PHPUnit\Extensions\Mongo\Client\Connector', $connection);
 		$connection->collection('test')->insert(array(
 			'document' => 'test document'
 		));

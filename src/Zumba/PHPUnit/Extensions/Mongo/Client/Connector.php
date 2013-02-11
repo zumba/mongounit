@@ -1,7 +1,7 @@
 <?php
 
-namespace PHPUnit\Extensions\Mongo\Client;
-use PHPUnit\Extensions\Mongo\Base\Connector as BaseConnector;
+namespace Zumba\PHPUnit\Extensions\Mongo\Client;
+use Zumba\PHPUnit\Extensions\Mongo\Base\Connector as BaseConnector;
 
 class Connector implements BaseConnector {
 

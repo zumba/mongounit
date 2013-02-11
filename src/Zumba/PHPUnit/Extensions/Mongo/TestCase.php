@@ -1,7 +1,7 @@
 <?php
 
-namespace PHPUnit\Extensions\Mongo;
-use PHPUnit\Extensions\Mongo\DataSet\DataSet;
+namespace Zumba\PHPUnit\Extensions\Mongo;
+use \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet;
 
 abstract class TestCase extends \PHPUnit_Framework_TestCase {
 
@@ -34,14 +34,14 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase {
 	/**
 	 * Retrieve a mongo connection client.
 	 *
-	 * @return PHPUnit\Extensions\Mongo\Client\Connector
+	 * @return Zumba\PHPUnit\Extensions\Mongo\Client\Connector
 	 */
 	protected abstract function getConnection();
 
 	/**
 	 * Retrieve a dataset object.
 	 *
-	 * @return PHPUnit\Extensions\Mongo\DataSet\DataSet
+	 * @return Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
 	 */
 	protected abstract function getDataSet();
 
