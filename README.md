@@ -6,8 +6,8 @@ __Current Version__: v1.0
 
 ## Requirements
 
-PHP 5.3+
-PECL mongo 1.3
+* PHP 5.3+
+* PECL mongo 1.3+
 
 ## Testing
 
