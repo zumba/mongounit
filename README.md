@@ -11,8 +11,6 @@ __Current Version__: v1.1
 
 ## Testing
 
-After cloning the repo, simply `cd` to the cloned directly and run:
-
-```shell
-$ phpunit
-```
+1. Clone repo.
+1. Install dependencies `composer install -dev`
+1. Run `./bin/phpunit`
