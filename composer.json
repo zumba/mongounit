@@ -27,9 +27,6 @@
     "require-dev": {
         "phpunit/phpunit": "3.7.*"
     },
-    "bin": [
-        "composer/bin/mongounit"
-    ],
     "config": {
         "bin-dir": "bin"
     },
