@@ -1,7 +1,6 @@
 Mongounit is a PHPUnit extension for test cases that utilize MongoDB as their data source.
 
-__Current Version__: v1.1
-
+[![Latest Stable Version](https://poser.pugx.org/zumba/mongounit/v/stable.png)](https://packagist.org/packages/zumba/mongounit)
 [![Build Status](https://secure.travis-ci.org/zumba/mongounit.png)](http://travis-ci.org/zumba/mongounit)
 
 ## Requirements
