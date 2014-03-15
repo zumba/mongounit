@@ -12,11 +12,11 @@ before_script:
 
 
 script: 
-	if [ $php = 5.3 ]; then
-		./bin/phpunit --coverage-text --exclude-group 5.4
-	else
-		./bin/phpunit --coverage-text
-	fi
+  if [ $php = 5.3 ]; then
+    ./bin/phpunit --coverage-text --exclude-group 5.4
+  else
+    ./bin/phpunit --coverage-text
+  fi
 
 notifications:
   email: false
