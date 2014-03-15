@@ -11,12 +11,7 @@ before_script:
   - composer install --dev
 
 
-script: 
-  if [ $php = 5.3 ]; then
-    ./bin/phpunit --coverage-text --exclude-group 5.4
-  else
-    ./bin/phpunit --coverage-text
-  fi
+script: if [ $php = 5.3 ]; then ./bin/phpunit --coverage-text --exclude-group 5.4; else ./bin/phpunit --coverage-text; fi
 
 notifications:
   email: false
