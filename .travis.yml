@@ -11,7 +11,7 @@ before_script:
   - composer install --dev
 
 
-script: if [ $(phpenv version-name) = "5.3" ]; then ./bin/phpunit --coverage-text --exclude-group 5.4; else ./bin/phpunit --coverage-text; fi
+script: if [ $(phpenv version-name) = "5.3" ]; then ./bin/phpunit -c phpunit.5.3.xml --coverage-text; else ./bin/phpunit --coverage-text; fi
 
 notifications:
   email: false
