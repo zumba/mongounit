@@ -9,8 +9,9 @@ trait TestTrait {
 	 * Setup the mongo db with fixture data.
 	 *
 	 * @return void
+	 * @before
 	 */
-	public function setUp() {
+	public function mongoSetUp() {
 		if (!class_exists('MongoClient')) {
 			$this->markTestSkipped('The Mongo extension is not available.');
 			return;
@@ -24,8 +25,9 @@ trait TestTrait {
 	 * Cleanup after test.
 	 *
 	 * @return void
+	 * @after
 	 */
-	public function tearDown() {
+	public function mongoTearDown() {
 		$this->getMongoDataSet()->dropAllCollections();
 	}
 
