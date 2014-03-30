@@ -48,11 +48,8 @@ class MyMongoTestCase extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testRead() {
-		$expected = [
-			'name' => 'Document 1'
-		];
 		$result = $this->getMongoConnection()->test->some_collection->findOne(['name' => 'Document 2']);
-		$this->assertEquals('Document 1', $result['name']);
+		$this->assertEquals('Document 2', $result['name']);
 	}
 
 }
