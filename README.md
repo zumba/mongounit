@@ -5,8 +5,8 @@ Mongounit is a PHPUnit extension for test cases that utilize MongoDB as their da
 
 ## Requirements
 
-* PHP 5.3+
-* PHPUnit ~3.7, ~4.0
+* PHP 5.5+
+* PHPUnit 4.0+
 * PECL mongo 1.3+
 
 ## Testing
@@ -28,6 +28,7 @@ class MyMongoTestCase extends \PHPUnit_Framework_TestCase {
 	 * @return Zumba\PHPUnit\Extensions\Mongo\Client\Connector
 	 */
 	public function getMongoConnection() {
+		// Add your credentials here
 		return new \MongoClient();
 	}
 
@@ -57,8 +58,6 @@ class MyMongoTestCase extends \PHPUnit_Framework_TestCase {
 
 [See full working example.](https://github.com/zumba/mongounit/blob/master/examples/PizzaTraitTest.php)
 
-## Note about PHP and PHPUnit Versions
+## Note about PHP Versions
 
-PHP 5.3 is supported for PHPUnit ~3.7 by way of extending `\Zumba\PHPUnit\Extensions\Mongo\TestCase`. PHPUnit 4 is working with this testcase, however it is not actively supported.
-
-PHP 5.4 is supported via use of the `\Zumba\PHPUnit\Extensions\Mongo\TestTrait` trait. It currently is supporting PHPUnit 4 `@before` and `@after` but can be used in PHPUnit ~3.7 by either aliasing the `mongoSetUp` and `mongoTearDown` to `setUp` and `tearDown`, or by calling `mongoSetUp` and `mongoTearDown` in your respective methods.
+PHP 5.3 and 5.4 are no longer actively supported. If you are using these version, stick to v1.2.0 of mongounit or below, however it is recommended to stop using these versions of PHP.

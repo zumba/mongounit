@@ -1,8 +1,8 @@
 <?php
 
-/**
- * @group 5.4
- */
+use \Zumba\PHPUnit\Extensions\Mongo\Client\Connector;
+use \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet;
+
 class PizzaTraitTest extends \PHPUnit_Framework_TestCase {
 	use \Zumba\PHPUnit\Extensions\Mongo\TestTrait;
 
@@ -21,7 +21,7 @@ class PizzaTraitTest extends \PHPUnit_Framework_TestCase {
 
 	public function getMongoConnection() {
 		if (empty($this->connection)) {
-			$this->connection = new \Zumba\PHPUnit\Extensions\Mongo\Client\Connector(new \MongoClient());
+			$this->connection = new Connector(new \MongoClient());
 			$this->connection->setDb(static::DEFAULT_DATABASE);
 		}
 		return $this->connection;
@@ -29,7 +29,7 @@ class PizzaTraitTest extends \PHPUnit_Framework_TestCase {
 
 	public function getMongoDataSet() {
 		if (empty($this->dataSet)) {
-			$this->dataSet = new \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getMongoConnection());
+			$this->dataSet = new DataSet($this->getMongoConnection());
 			$this->dataSet->setFixture($this->fixture);
 		}
 		return $this->dataSet;
