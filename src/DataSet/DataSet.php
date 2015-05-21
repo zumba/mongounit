@@ -12,7 +12,7 @@ class DataSet {
 	 *
 	 * @var array
 	 */
-	protected $fixture = array();
+	protected $fixture = [];
 
 	/**
 	 * Connection object.
