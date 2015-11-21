@@ -2,6 +2,10 @@
 
 namespace Zumba\PHPUnit\Extensions\Mongo\Base;
 
+/**
+ * Interface Connector
+ * @package Zumba\PHPUnit\Extensions\Mongo\Base
+ */
 interface Connector {
 
 	/**

@@ -3,6 +3,10 @@
 namespace Zumba\PHPUnit\Extensions\Mongo\DataSet;
 use \Zumba\PHPUnit\Extensions\Mongo\Client\Connector;
 
+/**
+ * Class DataSet
+ * @package Zumba\PHPUnit\Extensions\Mongo\DataSet
+ */
 class DataSet {
 
 	/**
@@ -17,49 +21,49 @@ class DataSet {
 	/**
 	 * Connection object.
 	 *
-	 * @var Zumba\PHPUnit\Extensions\Mongo\Client\Connector
+	 * @var Connector
 	 */
 	protected $connection;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param Zumba\PHPUnit\Extensions\Mongo\Client\Connector
-	 */
+    /**
+     * Constructor.
+     *
+     * @param Connector $connection
+     */
 	public function __construct(Connector $connection) {
 		$this->connection = $connection;
 	}
 
-	/**
-	 * Sets up the fixture data.
-	 *
-	 * see $this->fixture
-	 *
-	 * @param array $data
-	 * @return Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
-	 */
+    /**
+     * Sets up the fixture data.
+     *
+     * see $this->fixture
+     *
+     * @param array $data
+     * @return $this
+     */
 	public function setFixture(array $data) {
 		$this->fixture = $data;
 		return $this;
 	}
 
-	/**
-	 * Drops all collections specified in the fixture keys.
-	 *
-	 * @return Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
-	 */
+    /**
+     * Drops all collections specified in the fixture keys.
+     *
+     * @return $this
+     */
 	public function dropAllCollections() {
-		foreach (array_keys($this->fixture) as $collection) {
-			$this->connection->collection($collection)->drop();
+		foreach ($this->fixture as $collectionKey => $collectionData) {
+			$this->connection->collection($collectionKey)->drop();
 		}
 		return $this;
 	}
 
-	/**
-	 * Creates all collections with data from the fixture.
-	 *
-	 * @return Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
-	 */
+    /**
+     * Creates all collections with data from the fixture.
+     *
+     * @return $this
+     */
 	public function buildCollections() {
 		foreach ($this->fixture as $collection => $data) {
 			foreach ($data as $entry) {
