@@ -10,24 +10,24 @@ class PizzaTraitTest extends \PHPUnit_Framework_TestCase {
 
 	use \Zumba\PHPUnit\Extensions\Mongo\TestTrait;
 
-    /**
-     *  Default Database name
-     */
+	/**
+	 *  Default Database name
+	 */
 	const DEFAULT_DATABASE = 'mongounit_test';
 
-    /**
-     * @var Connector
-     */
+	/**
+	 * @var \Zumba\PHPUnit\Extensions\Mongo\Client\Connector
+	 */
 	protected $connection;
 
-    /**
-     * @var DataSet
-     */
+	/**
+	 * @var \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
+	 */
 	protected $dataSet;
 
-    /**
-     * @var array
-     */
+	/**
+	 * @var array
+	 */
 	protected $fixture = [
 		'orders' => [
 			['size' => 'large', 'toppings' => ['cheese', 'ham']],
@@ -35,9 +35,9 @@ class PizzaTraitTest extends \PHPUnit_Framework_TestCase {
 		]
 	];
 
-    /**
-     * @return Connector
-     */
+	/**
+	 * @return \Zumba\PHPUnit\Extensions\Mongo\Client\Connector
+	 */
 	public function getMongoConnection() {
 		if (empty($this->connection)) {
 			$this->connection = new Connector(new \MongoClient());
@@ -46,9 +46,9 @@ class PizzaTraitTest extends \PHPUnit_Framework_TestCase {
 		return $this->connection;
 	}
 
-    /**
-     * @return DataSet
-     */
+	/**
+	 * @return \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
+	 */
 	public function getMongoDataSet() {
 		if (empty($this->dataSet)) {
 			$this->dataSet = new DataSet($this->getMongoConnection());

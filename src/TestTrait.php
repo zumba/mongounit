@@ -1,8 +1,6 @@
 <?php
 
 namespace Zumba\PHPUnit\Extensions\Mongo;
-use \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet;
-use \Zumba\PHPUnit\Extensions\Mongo\Client\Connector;
 
 /**
  * Class TestTrait
@@ -36,18 +34,18 @@ trait TestTrait {
 		$this->getMongoDataSet()->dropAllCollections();
 	}
 
-    /**
-     * Retrieve a mongo connection client.
-     *
-     * @return Connector
-     */
+	/**
+	 * Retrieve a mongo connection client.
+	 *
+	 * @return \Zumba\PHPUnit\Extensions\Mongo\Client\Connector
+	 */
 	protected abstract function getMongoConnection();
 
-    /**
-     * Retrieve a DataSet object.
-     *
-     * @return DataSet
-     */
+	/**
+	 * Retrieve a DataSet object.
+	 *
+	 * @return \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
+	 */
 	protected abstract function getMongoDataSet();
 
 }
