@@ -3,6 +3,10 @@
 namespace Zumba\PHPUnit\Extensions\Mongo\Client;
 use Zumba\PHPUnit\Extensions\Mongo\Base\Connector as BaseConnector;
 
+/**
+ * Class Connector
+ * @package Zumba\PHPUnit\Extensions\Mongo\Client
+ */
 class Connector implements BaseConnector {
 
 	/**

@@ -1,8 +1,11 @@
 <?php
 
 namespace Zumba\PHPUnit\Extensions\Mongo;
-use \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet;
 
+/**
+ * Class TestTrait
+ * @package Zumba\PHPUnit\Extensions\Mongo
+ */
 trait TestTrait {
 
 	/**
@@ -34,14 +37,14 @@ trait TestTrait {
 	/**
 	 * Retrieve a mongo connection client.
 	 *
-	 * @return Zumba\PHPUnit\Extensions\Mongo\Client\Connector
+	 * @return \Zumba\PHPUnit\Extensions\Mongo\Client\Connector
 	 */
 	protected abstract function getMongoConnection();
 
 	/**
-	 * Retrieve a dataset object.
+	 * Retrieve a DataSet object.
 	 *
-	 * @return Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
+	 * @return \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
 	 */
 	protected abstract function getMongoDataSet();
 
