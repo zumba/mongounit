@@ -40,7 +40,7 @@ class DataSet {
 	 * see $this->fixture
 	 *
 	 * @param array $data
-	 * @return $this
+	 * @return \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
 	 */
 	public function setFixture(array $data) {
 		$this->fixture = $data;
@@ -50,7 +50,7 @@ class DataSet {
 	/**
 	 * Drops all collections specified in the fixture keys.
 	 *
-	 * @return $this
+	 * @return \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
 	 */
 	public function dropAllCollections() {
 		foreach ($this->fixture as $collectionKey => $collectionData) {
@@ -62,7 +62,7 @@ class DataSet {
 	/**
 	 * Creates all collections with data from the fixture.
 	 *
-	 * @return $this
+	 * @return \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
 	 */
 	public function buildCollections() {
 		foreach ($this->fixture as $collection => $data) {
