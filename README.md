@@ -5,9 +5,9 @@ Mongounit is a PHPUnit extension for test cases that utilize MongoDB as their da
 
 ## Requirements
 
-* PHP 5.5+
+* PHP 5.6+
 * PHPUnit 4.0+
-* PECL mongo 1.3+
+* PECL mongodb 1.2+
 
 ## Testing
 
@@ -29,7 +29,7 @@ class MyMongoTestCase extends \PHPUnit_Framework_TestCase {
 	 */
 	public function getMongoConnection() {
 		// Add your credentials here
-		return new \MongoClient();
+		return new \MongoDB\Client();
 	}
 
 	/**
@@ -60,4 +60,4 @@ class MyMongoTestCase extends \PHPUnit_Framework_TestCase {
 
 ## Note about PHP Versions
 
-PHP 5.3 and 5.4 are no longer actively supported. If you are using these version, stick to v1.2.0 of mongounit or below, however it is recommended to stop using these versions of PHP.
+PHP 5.5 and below are no longer actively supported. If you are using these version, stick with previous versions of mongounit, however it is recommended to stop using these versions of PHP.
