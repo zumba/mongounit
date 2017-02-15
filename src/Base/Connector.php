@@ -11,7 +11,7 @@ interface Connector {
 	/**
 	 * Get the connection.
 	 *
-	 * @return \MongoClient
+	 * @return \MongoDB\Client
 	 */
 	public function getConnection();
 
@@ -19,7 +19,7 @@ interface Connector {
 	 * Get a collection object.
 	 *
 	 * @param string $name Name of the collection
-	 * @return \MongoCollection
+	 * @return \MongoDB\Collection
 	 */
 	public function collection($name);
 
