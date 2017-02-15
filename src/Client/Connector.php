@@ -17,13 +17,6 @@ class Connector implements BaseConnector {
 	protected $connection;
 
 	/**
-	 * Array of collection objects keyed by collection name
-	 *
-	 * @var array
-	 */
-	protected $collections;
-
-	/**
 	 * The db name this connector should work off
 	 *
 	 * @var string
@@ -40,7 +33,7 @@ class Connector implements BaseConnector {
 	/**
 	 * Retrieves a connection.
 	 *
-	 * @return \MongoClient
+	 * @return \MongoDB\Client
 	 */
 	public function getConnection() {
 		return $this->connection;
@@ -59,17 +52,10 @@ class Connector implements BaseConnector {
 	 * Retrieves a collection object by name.
 	 *
 	 * @param string $name
-	 * @return \MongoCollection
+	 * @return \MongoDB\Collection
 	 */
 	public function collection($name) {
-		if (empty($this->collections[$name])) {
-			$this->collections[$name] = new \MongoDB\Collection(
-				$this->connection->getManager(),
-				$this->connection->selectDatabase($this->dbName),
-				$name
-			);
-		}
-		return $this->collections[$name];
+		return $this->connection->selectCollection($this->dbName, $name);
 	}
 
 }
