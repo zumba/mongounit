@@ -15,8 +15,8 @@ trait TestTrait {
 	 * @before
 	 */
 	public function mongoSetUp() {
-		if (!class_exists('MongoClient')) {
-			$this->markTestSkipped('The Mongo extension is not available.');
+		if (!class_exists('MongoDB\Client')) {
+			$this->markTestSkipped('The MongoDB extension is not available.');
 			return;
 		}
 		$this->getMongoDataSet()

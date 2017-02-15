@@ -12,7 +12,7 @@ class Connector implements BaseConnector {
 	/**
 	 * Holds the mongo client connection.
 	 *
-	 * @var \MongoClient
+	 * @var \MongoDB\Client
 	 */
 	protected $connection;
 
@@ -33,7 +33,7 @@ class Connector implements BaseConnector {
 	/**
 	 * Constructor
 	 */
-	public function __construct(\MongoClient $connection) {
+	public function __construct(\MongoDB\Client $connection) {
 		$this->connection = $connection;
 	}
 
@@ -63,7 +63,11 @@ class Connector implements BaseConnector {
 	 */
 	public function collection($name) {
 		if (empty($this->collections[$name])) {
-			$this->collections[$name] = new \MongoCollection($this->connection->selectDb($this->dbName), $name);
+			$this->collections[$name] = new \MongoDB\Collection(
+				$this->connection->getManager(),
+				$this->connection->selectDatabase($this->dbName),
+				$name
+			);
 		}
 		return $this->collections[$name];
 	}
