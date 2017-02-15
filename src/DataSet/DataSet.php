@@ -66,9 +66,7 @@ class DataSet {
 	 */
 	public function buildCollections() {
 		foreach ($this->fixture as $collection => $data) {
-			foreach ($data as $entry) {
-				$this->connection->collection($collection)->insertOne($entry);
-			}
+			$this->connection->collection($collection)->insertMany($data);
 		}
 		return $this;
 	}
