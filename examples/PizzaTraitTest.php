@@ -32,7 +32,10 @@ class PizzaTraitTest extends \PHPUnit_Framework_TestCase {
 		'orders' => [
 			['size' => 'large', 'toppings' => ['cheese', 'ham']],
 			['size' => 'medium', 'toppings' => ['cheese']]
-		]
+		],
+		'carts' => [
+			// Intentionally empty
+		],
 	];
 
 	/**
